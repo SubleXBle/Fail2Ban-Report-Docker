@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  fail2ban-report:
+    build: .
+    container_name: fail2ban-report
+    ports:
+      - "8080:80"
+    volumes:
+  - ./archive:/var/www/html/archive
+  - /opt/Fail2Ban-Report/fail2ban-report.config:/opt/Fail2Ban-Report/fail2ban-report.config:ro
+  - /opt/Fail2Ban-Report/.htpasswd:/opt/Fail2Ban-Report/.htpasswd:ro
+    restart: unless-stopped
