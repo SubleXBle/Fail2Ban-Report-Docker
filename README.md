@@ -1,17 +1,6 @@
 # Fail2Ban-Report-Docker
 
 
-Oiso :::
+dockerfile : installiert umgebung und kopiert alles aus Fail2Ban-Report/ in den Webhost des Containers nach /var/www/html/
 
-Host : Nativ
-
-Fail2Ban
-UFW
-/opt/Fail2Ban-Report/
-cronjobs
-
--------------
-
-Container:
-
-Weboberfläche mit archive/ als mounted target
+im Container haben wir dann also /var/www/html/Fail2Ban-Report/
