@@ -8,6 +8,9 @@ Flexibility comes from the two backend shell scripts, which you can adapt to you
 
 🛡️ **Note**: This tool is a visualization and management layer — it does **not** replace proper intrusion detection or access control. Deploy it behind IP restrictions or HTTP authentication.
 
+
+Please read the [Installation-Guide](#Installation-Guide) carefully!
+
 ---
 
 ## 📚 What It Does
@@ -109,7 +112,7 @@ It provides optional tools to:
 
 
 
-# Fail2Ban-Report – Docker Installation Guide
+# Installation-Guide
 
 ## Requirements
 > Before you begin, make sure the following are installed on your host system:
