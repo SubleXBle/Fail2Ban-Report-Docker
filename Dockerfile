@@ -19,3 +19,7 @@ EXPOSE 80
 
 # Starte Apache im Vordergrund
 CMD ["apache2-foreground"]
+
+
+volumes:
+  - /opt/Fail2Ban-Report/archive:/var/www/html/archive:rw
