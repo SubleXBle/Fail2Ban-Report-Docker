@@ -1,25 +1,10 @@
 FROM php:8.2-apache
 
-# Apache-Konfiguration: .htaccess erlauben
-RUN sed -i 's/AllowOverride None/AllowOverride All/g' /etc/apache2/apache2.conf
+# Enable Apache Rewrite
+RUN a2enmod rewrite
 
-# Kopiere nur relevante Dateien ins Webverzeichnis
-COPY index.php /var/www/html/
-COPY assets/ /var/www/html/assets/
-COPY .htaccess /var/www/html/
+# Copy code into container
+COPY ./www /var/www/Fail2Ban-Report
 
-# Erstelle Verzeichnis für externe Konfigurationen
-RUN mkdir -p /opt/Fail2Ban-Report
-
-# Setze Berechtigungen
-RUN chown -R www-data:www-data /var/www/html /opt/Fail2Ban-Report
-
-# Port 80 freigeben
-EXPOSE 80
-
-# Starte Apache im Vordergrund
-CMD ["apache2-foreground"]
-
-
-volumes:
-  - /opt/Fail2Ban-Report/archive:/var/www/html/archive:rw
+# Adjust permissions for archive folder
+RUN chown -R www-data:www-data /var/www/Fail2Ban-Report/archive
