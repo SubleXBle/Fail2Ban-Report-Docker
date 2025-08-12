@@ -10,6 +10,8 @@ Flexibility comes from the two backend shell scripts, which you can adapt to you
 
 🛡️ **Note**: This tool is a visualization and management layer — it does **not** replace proper intrusion detection or access control. Deploy it behind IP restrictions or HTTP authentication.
 
+## 🐳 Docker Specifics
+> The Docker version is always based on the native version and therefore receives updates after the native release, with a slight delay to ensure stability and integration.
 
 ## Installation
 Please read the [Installation-Guide](#Installation-Guide) carefully!
