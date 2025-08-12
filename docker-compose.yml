@@ -6,5 +6,5 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - /var/www/Fail2Ban-Report:/var/www/Fail2Ban-Report:rw
+      - /var/www/html/Fail2Ban-Report:/var/www/html/Fail2Ban-Report:rw
     restart: unless-stopped
