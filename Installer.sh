@@ -70,7 +70,7 @@ sudo chmod -R 755 "$ARCHIVE_DIR"
 info "Copying and configuring shell scripts..."
 
 # Beispiel: Annahme die Scripts liegen im Ordner ./scripts
-SCRIPTS_SRC="./scripts"
+SCRIPTS_SRC="Shellscripts/"
 SCRIPTS_DST="$INSTALL_ROOT"
 
 if [ ! -d "$SCRIPTS_SRC" ]; then
