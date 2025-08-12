@@ -1,5 +1,7 @@
 # Fail2Ban-Report-Docker
 
+> you asked for 🐳, so i build a 🐳
+
 > A simple and clean web-based dashboard to turn your daily Fail2Ban logs into searchable and filterable JSON reports — with optional IP blocklist management for UFW.
 
 **Integration**
