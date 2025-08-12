@@ -1,10 +1,12 @@
-FROM php:8.2-apache
+version: "3.9"
 
-# Enable Apache Rewrite
-RUN a2enmod rewrite
-
-# Copy code into container
-COPY ./www /var/www/Fail2Ban-Report
-
-# Adjust permissions for archive folder
-RUN chown -R www-data:www-data /var/www/Fail2Ban-Report/archive
+services:
+  fail2ban-report:
+    build: .
+    container_name: fail2ban-report
+    ports:
+      - "8080:80"   # Container-Port 80 -> Host-Port 8080
+    volumes:
+      # Mount the webroot from host to container
+      - /var/www/Fail2Ban-Report:/var/www/Fail2Ban-Report:rw
+    restart: unless-stopped
