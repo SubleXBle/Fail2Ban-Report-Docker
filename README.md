@@ -9,6 +9,7 @@
 + Docker (latest stable version)
 + Docker Compose (v2 or later)
 + a working Fail2Ban setup with log files accessable for shellscripts
++ UFW installed
 
 
 ## Directory Structure
