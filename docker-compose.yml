@@ -1,0 +1,12 @@
+version: "3.9"
+
+services:
+  fail2ban-report:
+    image: php:8.2-apache
+    container_name: fail2ban-report
+    ports:
+      - "8080:80"
+    volumes:
+      - ./www:/var/www/Fail2Ban-Report          # Dein Webcode
+      - /opt/Fail2Ban-Report/archive:/var/www/Fail2Ban-Report/archive:rw
+    restart: unless-stopped
