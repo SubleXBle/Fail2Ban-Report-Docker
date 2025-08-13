@@ -16,6 +16,10 @@ Flexibility comes from the two backend shell scripts, which you can adapt to you
 ## 🐳 Docker Specifics
 > The Docker version is always based on the native version and therefore receives updates after the native release, with a slight delay to ensure stability and integration.
 
+> The Docker-Version of Fail2Ban-Report has all you need for an easy start - single Script Setup - you can access archive/ to manage blocklists and /opt/Fail2Ban-Report/ for Settings like in the native Version, all Web-Related Stuff is inside of the container. There is a Helper-Script.sh to enable you to take actions in the container itself to propper set up .htaccess, therefore nano is present in the container.
+
+
+
 ## Installation
 Please read the [Installation-Guide](#Installation-Guide) carefully!
 
@@ -166,6 +170,10 @@ ether per .zip File or
 git clone https://github.com/<your-repo>/Fail2Ban-Report.git
 cd Fail2Ban-Report
 ```
+
+> if you are familiar with docker, you can easy change the dockerfile and docker-compose.yml or .htaccess to fit your needs (e.g.: ports) prior installation.
+
+
 ### 2 Make Installer executeable
 ```
 chmod +x installer.sh
@@ -183,31 +191,53 @@ chmod +x installer.sh
 + Configure volume mounts for data persistence
 + Apply initial permissions for the archive directory
 
+> The Installer will show you defaults : you **HAVE** to type in something (e.g.: defaults that are shown by Installer) else it will not be set in config!
+
+### 4 Execute Helper-Script
+
+```
+./Helper-Script
+```
+this will take you to /var/www/html of the Container, so you can:
+- edit .htaccess for more security
+- create a .htpasswd (best place would be in /var/www/ - so outside of the webroot)
+- you can also create a html file in www with a redirect to Fail2Ban-Report/ or whatever you like
+
+
 ### 4 Access the web interface
 After installation, open your browser and visit:
 ```
-https://<your-server-ip>:<port>
+https://<your-server-ip>/Fail2Ban-Report
 ```
 > (Default port is defined in docker-compose.yml.)
 
 ## First Login & Security
 
-The web interface is protected with .htpasswd authentication.
 
-If you don’t have an .htpasswd file yet, you can use the built-in generator at:
+First Login ... 
+
 
 ## Maintenance
 
 > restart container
 ```
-docker compose restart
+docker-compose stop && docker-compose start
 ```
+or
+```
+docker-compose restart
+```
+If you want to Reset the installation you can do so by stopping the container
 
 ```
+docker-compose stop
 ```
-
+then you can delete the container
 ```
+docker container prune
 ```
-
+and rebuild it
 ```
+docker-compose build && docker-compose up -d
 ```
+then everything in Web will be reinstalled, Stuff outside of Web will persist
