@@ -109,6 +109,10 @@ It provides optional tools to:
 - **User Feedback**: 
   - Shows a warning if there’s no data to copy.
   - Shows a success or error alert based on the clipboard operation result.
+
+> This Feature will only work with enabled https for security reasons
+
+
 ---
 
 ## ✅ What It Is
