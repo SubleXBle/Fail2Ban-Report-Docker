@@ -71,25 +71,37 @@ It provides optional tools to:
 > If you want to join the conversation or have questions or ideas, visit the 💬 [Discussions page](https://github.com/SubleXBle/Fail2Ban-Report/discussions).
 
 
-## 🆕 What's New in V 0.3.3 (QoL Update)
-### ⚠️ Warning System and Pending Status Indicators
-- 🚨 New [Warnings] section in .config to configure warning & critical thresholds (events per minute per jail) in format warning:critical (e.g: 20:50).
-- 👀 warning & critical status indicators (colored dots) in the header for quick overview.
-- ⏳ Manual block/unblock actions now mark IPs as pending until processed by firewall-update.
-- 📊 Pending entries are now visible in blocklist stats for better tracking.
+## 🆕 What's New in V 0.4.0
 
-### ✔️ Multi-Selection UI and Bulk Actions for Ban & Report
-- ✅ Switched from per-row action buttons to checkbox multi-selection for IPs.
-- 📋 New dedicated “Ban” and “Info” buttons for bulk processing.
-- 🔄 Frontend updated to handle and display results for multiple IP actions simultaneously.
-- 🔔 New notification system for success/info/error messages on each action.
+### 🧱 Firewall & JSON
+- Optimized `firewall-update.sh` for faster batch processing of IPs.
+- Batch blocking per jail with a single `ufw reload`.
+- Safe unblocking with rule renumbering and reload after each deletion.
+- JSON updates and cleanup done once per jail, not per IP.
+- Core mechanisms, logging, and permissions unchanged.
+> This significantly reduces both the runtime and the lock duration of the blocklists, especially during ban events.
 
-### 🛠 Backend Improvements & New IP Reporting
-- 🔄 Backend now accept arrays of IPs for ban and report actions, with detailed aggregated feedback.
-- 🆕 Added IPInfo API integration alongside AbuseIPDB for richer geolocation and network info.
-- ⏲️ Built-in delay between report requests to avoid API rate limits.
-- ⚙️ Improved error handling and user feedback for multi-IP operations.
+### 🖥️ UI & Statistics
+- Minor visual improvements in:
+  - `header.php`, `fail2ban-logstats.php`, `fail2ban-logstats.js`
+  - `index.php` (IP sorting)
+  - `style.css`
 
+### 🟡🔴 Marker Feature
+- **IP Event Markers**: Highlights repeated events (yellow) and IPs in multiple jails (red).
+- **Sortable & Filterable Mark Column**: New column `Mark` with dropdown filter.
+- **Dynamic Filtering**: Markers update live with Action, Jail, IP, or Date filters.
+- Marker column placed between Action and IP, responsive layout preserved.
+
+### ✨ New Feature: Copy Filtered Data to Clipboard
+
+- **Added** a new "Copy to Clipboard" button to export the currently **filtered table data**.
+- **Implemented** a dedicated JavaScript file `assets/js/table-export.js` for the copy functionality.
+- **Integration** with existing DataTables filtering logic to ensure only visible/filtered rows are copied.
+- **Output Format**: Tab-separated values (TSV) with all HTML tags removed for clean text export.
+- **User Feedback**: 
+  - Shows a warning if there’s no data to copy.
+  - Shows a success or error alert based on the clipboard operation result.
 ---
 
 ## ✅ What It Is
