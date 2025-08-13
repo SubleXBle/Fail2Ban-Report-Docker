@@ -130,7 +130,6 @@ It provides optional tools to:
 
 > - Found a bug? → [Open an issue](https://github.com/SubleXBle/Fail2Ban-Report/issues)
 
-- ✅ 
 
 ---
 
