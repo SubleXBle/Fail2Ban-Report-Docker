@@ -7,6 +7,6 @@ services:
       - "80:80"     # HTTP
       - "443:443"   # HTTPS
     volumes:
-      - /var/www/html/Fail2Ban-Report:/var/www/html/Fail2Ban-Report:rw
       - /var/www/html/Fail2Ban-Report/archive:/var/www/html/Fail2Ban-Report/archive:rw
+      - /opt/Fail2Ban-Report:/opt/Fail2Ban-Report:rw
     restart: unless-stopped
