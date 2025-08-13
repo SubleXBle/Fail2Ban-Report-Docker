@@ -1,7 +1,7 @@
 # Fail2Ban-Report-Docker
 > Beta 4 : Version 0.4.0 : Docker
 
-you asked for 🐳, so i built a 🐳 : ⭐ if you like it
+you asked for 🐳, so i built it : ⭐ this Repo if you like it
 
 > A simple and clean web-based dashboard to turn your daily Fail2Ban logs into searchable and filterable JSON reports — with optional IP blocklist management for UFW.
 
@@ -32,7 +32,8 @@ It provides optional tools to:
 - ⚡ Interact with IPs (e.g., manually block, unblock, or report to external services)  
 - 📂 Maintain **jail-specific** persistent blocklists (JSON) with `active` and `pending` status  
 - 🔄 Sync those lists with your system firewall using **ufw**  
-- 🚨 Show **warning indicators** when ban rates exceed configurable thresholds  
+- 🚨 Show **warning indicators** when ban rates exceed configurable thresholds
+- 🚨 Show **Markers** when am IP Address is present more than once in one or more jails.  
 
 > **Note:** Direct integration with other firewalls or native Fail2Ban jail commands is not yet implemented.
 
