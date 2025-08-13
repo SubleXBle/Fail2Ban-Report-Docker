@@ -19,7 +19,6 @@ Flexibility comes from the two backend shell scripts, which you can adapt to you
 > The Docker-Version of Fail2Ban-Report has all you need for an easy start - single Script Setup - you can access archive/ to manage blocklists and /opt/Fail2Ban-Report/ for Settings like in the native Version, all Web-Related Stuff is inside of the container. There is a Helper-Script.sh to enable you to take actions in the container itself to propper set up .htaccess, therefore nano is present in the container.
 
 
-
 ## Installation
 Please read the [Installation-Guide](#Installation-Guide) carefully!
 
@@ -124,6 +123,14 @@ It provides optional tools to:
 - ❌ A universal firewall manager (no native support for iptables/nftables, etc. — yet)  
 - ❌ A tool for **automatic** jail management (manual actions only for now)  
 - ❌ A heavy analytics platform — it’s lightweight and log-driven by design  
+
+---
+
+## 🪳 Bugfixes
+
+> - Found a bug? → [Open an issue](https://github.com/SubleXBle/Fail2Ban-Report/issues)
+
+- ✅ 
 
 ---
 
