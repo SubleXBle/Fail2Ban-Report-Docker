@@ -16,7 +16,7 @@ Flexibility comes from the two backend shell scripts, which you can adapt to you
 ## 🐳 Docker Specifics
 > The Docker version is always based on the native version and therefore receives updates after the native release, with a slight delay to ensure stability and integration.
 
-> The Docker-Version of Fail2Ban-Report has all you need for an easy start - single Script Setup - you can access archive/ to manage blocklists and /opt/Fail2Ban-Report/ for Settings like in the native Version, all Web-Related Stuff is inside of the container. There is a Helper-Script.sh to enable you to take actions in the container itself to propper set up .htaccess, therefore nano is present in the container.
+> The Docker-Version of Fail2Ban-Report has all you need for an easy start - single Script Setup - you can access archive/ to manage blocklists and /opt/Fail2Ban-Report/ for Settings like in the native Version, all Web-Related Stuff is inside of the container. There is a Helper-Script.sh to enable you to take actions in the container itself and to propper set up .htaccess, therefore nano is present in the container.
 
 
 ## Installation
