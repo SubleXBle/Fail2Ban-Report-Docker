@@ -189,7 +189,7 @@ apt update -qq && apt upgrade -y -qq && apt autoremove -y -qq && apt install git
 ether per .zip File or
 
 ```
-git clone https://github.com/<your-repo>/Fail2Ban-Report.git
+git clone https://github.com/SubleXBle/Fail2Ban-Report-Docker
 cd Fail2Ban-Report
 ```
 
