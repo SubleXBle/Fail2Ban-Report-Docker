@@ -73,6 +73,10 @@ It provides optional tools to:
 
 ---
 
+## 🖼️ Screenshots
+
+[Main Window](images/MainWindow-040.png)
+
 ## 👥 Discussions
 
 > If you want to join the conversation or have questions or ideas, visit the 💬 [Discussions page](https://github.com/SubleXBle/Fail2Ban-Report/discussions).
