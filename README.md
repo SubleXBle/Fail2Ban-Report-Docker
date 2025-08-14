@@ -201,12 +201,12 @@ Default Port is set to 80:80 443:443 => change it if needed
 
 ### 2 Make Installer executeable
 ```
-chmod +x installer.sh
+chmod +x Installer.sh
 ```
 
 ### 3 Run the Installer
 ```
-./installer.sh
+./Installer.sh
 ```
 
 #### The script will:
