@@ -75,7 +75,7 @@ It provides optional tools to:
 
 ## 🖼️ Screenshots
 
-[Main Window](images/MainWindow-040.png)
+[images/MainWindow-040.png](images/MainWindow-040.png)
 
 ## 👥 Discussions
 
