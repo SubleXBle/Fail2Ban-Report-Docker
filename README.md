@@ -77,6 +77,7 @@ It provides optional tools to:
 ## 🖼️ Screenshots
 
 ![images/MainWindow-040.png](images/MainWindow-040.png)
+![images/Blocklist-040.png](images/Blocklist-040.png)
 
 ## 👥 Discussions
 
