@@ -245,6 +245,8 @@ crontab -e
 ```
 > set to */10 or */15 - to let shellscripts run with 10 or 15 minute timer
 
+> Congratulations!, you should now have a fully working Setup
+
 ## First Login & Security
 
 First Login - Check
@@ -275,4 +277,4 @@ and rebuild it
 ```
 docker-compose build && docker-compose up -d
 ```
-then everything in Web will be reinstalled, Stuff outside of Web will persist
+then everything in Web will be reinstalled, Stuff outside of Web (archive/ and opt/Fail2Ban-Report/) will persist
