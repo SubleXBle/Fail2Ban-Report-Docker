@@ -196,7 +196,7 @@ cd Fail2Ban-Report
 > You can moove the folder to wherever you want to keep your images on your Host
 > if you are familiar with docker, you can easy change the dockerfile and docker-compose.yml or .htaccess to fit your needs (e.g.: ports) prior installation.
 
-Default Port is set to 80:80 443:443 => change it if needed
+Default Ports are set to 80:80 443:443 => change it if needed
 
 
 ### 2 Make Installer executeable
