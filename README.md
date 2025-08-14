@@ -220,6 +220,12 @@ chmod +x Installer.sh
 
 ### 4 Execute Helper-Script
 
+make sure it is executeable
+
+```
+chmod +x Helper-Script
+```
+
 ```
 ./Helper-Script
 ```
