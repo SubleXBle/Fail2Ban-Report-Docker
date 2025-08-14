@@ -239,6 +239,11 @@ https://<your-server-ip>/Fail2Ban-Report
 ```
 crontab -e
 ```
+```
+*/5 * * * * /opt/Fail2Ban-Report/./fail2ban_log2json.sh
+*/5 * * * * /opt/Fail2Ban-Report/./firewall-update.sh
+```
+> set to */10 or */15 - to let shellscripts run with 10 or 15 minute timer
 
 ## First Login & Security
 
