@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-# --- Funktionen ---
+# --- Functions ---
 
 info()    { echo -e "\033[1;34m[INFO]\033[0m $*"; }
 warn()    { echo -e "\033[1;33m[WARN]\033[0m $*"; }
@@ -165,26 +165,9 @@ sudo chmod 644 "$CONFIG_FILE"
 
 info "Configuration saved to $CONFIG_FILE"
 
-# --- 5. Cronjob einrichten ---
-if confirm "Do you want to set up cronjobs to run the shell scripts periodically?"; then
-  echo "Choose interval in minutes (recommended 5, 10, or 15):"
-  read -rp "Interval [5]: " CRON_INTERVAL
-  CRON_INTERVAL=${CRON_INTERVAL:-5}
-  if [[ ! "$CRON_INTERVAL" =~ ^(5|10|15)$ ]]; then
-    warn "Invalid interval, defaulting to 5 minutes."
-    CRON_INTERVAL=5
-  fi
-
-  # Cronjob für fail2ban_log2json.sh
-  (sudo crontab -l 2>/dev/null | grep -v 'fail2ban_log2json.sh'; echo "*/$CRON_INTERVAL * * * * $INSTALL_ROOT/fail2ban_log2json.sh >> $LOGFILE 2>&1") | sudo crontab -
-
-  # Cronjob für firewall-update.sh
-  (sudo crontab -l 2>/dev/null | grep -v 'firewall-update.sh'; echo "*/$CRON_INTERVAL * * * * $INSTALL_ROOT/firewall-update.sh >> $LOGFILE 2>&1") | sudo crontab -
-
-  info "Cronjobs set to run every $CRON_INTERVAL minutes."
-else
-  info "Skipping cronjob setup."
-fi
+# --- 5. Hinweis auf sicheres Setup---
+info "Please don't forget to setup you htaccess file and cronjobs when setup is done .."
+info "Find Setup Instructions in the Repositorys Readme"
 
 # --- 6. Docker prüfen und Container starten ---
 if command -v docker &>/dev/null && command -v docker-compose &>/dev/null; then
