@@ -21,7 +21,7 @@ Flexibility comes from the two backend shell scripts, which you can adapt to you
 
 ## Installation
 ⚠️ Please read the [Installation-Guide](#Installation-Guide) carefully!
-> Never! expose to the internet without propper restrictions set up (htaccess has to be edited)
+> **Never!** expose to the internet without propper restrictions set up (**htaccess has to be edited**)
 
 ---
 
