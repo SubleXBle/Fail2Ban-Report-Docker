@@ -29,7 +29,7 @@
   <div>
     <h1>Fail2Ban-Report</h1>
     <h2>Let's catch the bad guys!</h2>
-    <div><span title="Beta 4.0"><small>Version : 0.4.0</small></span></div>
+    <div><span title="Beta 4.0"><small>Version : 0.4.0 : Docker 🐳</small></span></div>
   </div>
 
 
