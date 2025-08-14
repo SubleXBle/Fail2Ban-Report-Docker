@@ -101,7 +101,7 @@ It provides optional tools to:
   - `style.css`
 
 ### 🟡🔴 Marker Feature
-- **IP Event Markers**: Highlights repeated events (yellow) and IPs in multiple jails (red).
+- **IP Event Markers**: Highlights repeated events per IP (yellow) and IPs in multiple jails (red).
 - **Sortable & Filterable Mark Column**: New column `Mark` with dropdown filter.
 - **Dynamic Filtering**: Markers update live with Action, Jail, IP, or Date filters.
 - Marker column placed between Action and IP, responsive layout preserved.
