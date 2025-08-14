@@ -227,7 +227,7 @@ chmod +x Helper-Script.sh
 ```
 
 ```
-./Helper-Script
+./Helper-Script.sh
 ```
 this will take you to /var/www/html of the Container, so you can:
 ```
