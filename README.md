@@ -196,9 +196,9 @@ cd Fail2Ban-Report
 > You can moove the folder to wherever you want to keep your images on your Host
 > if you are familiar with docker, you can easy change the dockerfile and docker-compose.yml or .htaccess to fit your needs (e.g.: ports) prior installation.
 
-⚠️ When you are behind a reverse proxy ⚠️
-Default Ports are set to `80:80` `443:443`
-you would have to change this prior installation in `docker-compose.yml` and `Dockerfile` to propper connect to your reverse proxy
+#### ⚠️ When you are behind a reverse proxy ⚠️
+> Default Ports are set to `80:80` `443:443`
+> you would have to change this prior installation in `docker-compose.yml` and `Dockerfile` to propper connect to your reverse proxy
 
 
 ### 2 Make Installer executeable
