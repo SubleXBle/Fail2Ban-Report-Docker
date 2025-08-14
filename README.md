@@ -246,6 +246,14 @@ crontab -e
 ```
 > set to */10 or */15 - to let shellscripts run with 10 or 15 minute timer
 
+make sure Shellscripts are executeable
+
+```
+chmod +x /opt/Fail2Ban-Report/fail2ban_log2json.sh
+chmod +x /opt/Fail2Ban-Report/firewall-update.sh
+```
+
+
 > Congratulations!, you should now have a fully working Setup
 
 ## First Login & Security
