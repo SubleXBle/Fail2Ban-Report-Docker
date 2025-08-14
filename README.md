@@ -20,7 +20,7 @@ Flexibility comes from the two backend shell scripts, which you can adapt to you
 
 
 ## Installation
-Please read the [Installation-Guide](#Installation-Guide) carefully!
+⚠️ Please read the [Installation-Guide](#Installation-Guide) carefully!
 
 ---
 
