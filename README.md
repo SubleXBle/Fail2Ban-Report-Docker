@@ -34,7 +34,7 @@ It provides optional tools to:
 - 📂 Maintain **jail-specific** persistent blocklists (JSON) with `active` and `pending` status  
 - 🔄 Sync those lists with your system firewall using **ufw**  
 - 🚨 Show **warning indicators** when ban rates exceed configurable thresholds
-- 🚨 Show **Markers** when a IP Address is present more than once in one or more jails.  
+- 🚨 Show **Markers** when a IP Address is present more than once in one (yellow) or more (red) jails. 
 
 > **Note:** Direct integration with other firewalls or native Fail2Ban jail commands is not yet implemented.
 
