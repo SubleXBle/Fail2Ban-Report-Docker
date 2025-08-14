@@ -30,7 +30,7 @@ Fail2Ban-Report parses your `fail2ban.log` and generates JSON-based reports view
 It provides optional tools to:  
 
 - 📊 Visualize **ban** and **unban** events, including per-jail statistics  
-- ⚡ Interact with IPs (e.g., manually block, unblock, or report to external services)  
+- ⚡ Interact with IPs (e.g., manually block, unblock, or get report from external services)  
 - 📂 Maintain **jail-specific** persistent blocklists (JSON) with `active` and `pending` status  
 - 🔄 Sync those lists with your system firewall using **ufw**  
 - 🚨 Show **warning indicators** when ban rates exceed configurable thresholds
