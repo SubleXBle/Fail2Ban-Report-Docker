@@ -223,7 +223,7 @@ chmod +x Installer.sh
 make sure it is executeable
 
 ```
-chmod +x Helper-Script
+chmod +x Helper-Script.sh
 ```
 
 ```
