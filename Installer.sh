@@ -8,7 +8,7 @@ info()    { echo -e "\033[1;34m[INFO]\033[0m $*"; }
 warn()    { echo -e "\033[1;33m[WARN]\033[0m $*"; }
 error()   { echo -e "\033[1;31m[ERROR]\033[0m $*"; }
 confirm() {
-  # Ja/Nein Abfrage (default nein)
+  # yes/no  (default no)
   while true; do
     read -rp "$1 [y/N]: " yn
     case "$yn" in
@@ -19,14 +19,14 @@ confirm() {
   done
 }
 
-# --- Variablen ---
+# --- variables ---
 INSTALL_ROOT="/opt/Fail2Ban-Report"
 WEBROOT="/var/www/html/Fail2Ban-Report"
 ARCHIVE_DIR="$WEBROOT/archive"
 CONFIG_FILE="$INSTALL_ROOT/fail2ban-report.config"
 LOGFILE="/var/log/Fail2Ban-Report.log"
 
-# --- 1. System prüfen ---
+# --- 1. System check ---
 REQUIRED_PKGS=(fail2ban ufw jq cron bash)
 
 info "Checking required packages..."
@@ -57,7 +57,7 @@ else
   info "All required packages are installed."
 fi
 
-# --- 2. Ordner anlegen + Rechte setzen ---
+# --- 2. make folders + set permissions ---
 info "Preparing folders..."
 
 sudo mkdir -p "$INSTALL_ROOT"
@@ -66,10 +66,10 @@ sudo mkdir -p "$ARCHIVE_DIR"
 sudo chown -R www-data:www-data "$ARCHIVE_DIR"
 sudo chmod -R 755 "$ARCHIVE_DIR"
 
-# --- 3. Shellscripts vorbereiten ---
+# --- 3. prepare Shellscripts ---
 info "Copying and configuring shell scripts..."
 
-# Beispiel: Annahme die Scripts liegen im Ordner ./scripts
+# Location: Scripts are places in Shellscripts
 SCRIPTS_SRC="Shellscripts/"
 SCRIPTS_DST="$INSTALL_ROOT"
 
@@ -81,14 +81,15 @@ fi
 sudo cp "$SCRIPTS_SRC/fail2ban_log2json.sh" "$SCRIPTS_DST/"
 sudo cp "$SCRIPTS_SRC/firewall-update.sh" "$SCRIPTS_DST/"
 
-# Pfade in den Scripts anpassen (archive Ordner)
+# Setup Scriptpaths (archive/)
 sudo sed -i "s|BLOCKLIST_DIR=.*|BLOCKLIST_DIR=\"$ARCHIVE_DIR\"|" "$SCRIPTS_DST/firewall-update.sh"
 sudo sed -i "s|OUTPUT_JSON_DIR=.*|OUTPUT_JSON_DIR=\"$ARCHIVE_DIR\"|" "$SCRIPTS_DST/fail2ban_log2json.sh"
 
 sudo chmod +x "$SCRIPTS_DST/fail2ban_log2json.sh" "$SCRIPTS_DST/firewall-update.sh"
 
-# --- 4. Config erstellen / anpassen ---
+# --- 4. create Config ---
 info "Creating configuration..."
+info "You can use the values the Script tells you but you have to set them in the script to get written properly"
 
 # Funktion zur Eingabe mit Default-Wert
 prompt_default() {
