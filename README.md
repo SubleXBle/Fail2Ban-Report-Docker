@@ -163,6 +163,10 @@ It provides optional tools to:
 + a working Fail2Ban setup with log files accessable for shellscripts
 + UFW installed
 
+```
+apt update -qq && apt upgrade -y -qq && apt autoremove -y -qq && apt install git fail2ban ufw docker docker-compose -y -qq
+```
+
 
 ## Directory Structure
 > Your project should look like this:
