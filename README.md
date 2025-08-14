@@ -243,7 +243,7 @@ After installation, open your browser and visit:
 ```
 https://<your-server-ip>/Fail2Ban-Report
 ```
-> (Default port is defined in docker-compose.yml.)
+> (Default port can be defined in docker-compose.yml.)
 
 ## Set up cronjobs for Shellscripts
 
