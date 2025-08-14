@@ -2,6 +2,8 @@
 #          Fail2Ban-Report Docker
 # ----------------------------------------------------
 
+# Do not modify up here !
+
 # ----------------------------------------------------
 # Disable directory listing
 # ----------------------------------------------------
@@ -29,9 +31,28 @@ Options -Indexes
   RewriteRule ^archive/ - [F,L]
 </IfModule>
 
+
+# ----------------------------------------------------
+# Set UTF-8 as default charset
+# ----------------------------------------------------
+AddDefaultCharset utf-8
+
+##########################################################
+##########################################################
+##########################################################
+
+# ----------------------------------------------------
+# Set your own Rules to fit your needs down here
+# Example for additonal configuration
+# ----------------------------------------------------
+
+# This is mandatory for a save setup!
+# Never expose this to the internet without https and restrictions (auth / ip)
+
 # ----------------------------------------------------
 # BASIC HTTPS HEADERS
 # ----------------------------------------------------
+
 # Redirect to HTTPS (also works behind reverse proxies using X-Forwarded-Proto)
 RewriteEngine On
 
@@ -51,12 +72,6 @@ RewriteEngine On
 #  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
 </IfModule>
 
-
-# ----------------------------------------------------
-# Set UTF-8 as default charset
-# ----------------------------------------------------
-AddDefaultCharset utf-8
-
 # ----------------------------------------------------
 # Set Basic Auth
 # ----------------------------------------------------
@@ -66,12 +81,6 @@ AddDefaultCharset utf-8
 #AuthUserFile /var/www/.htpasswd
 #Require valid-user
 
-
-
-# ----------------------------------------------------
-# Set your own Rules to fit your needs down here
-# Example for additonal configuration
-# ----------------------------------------------------
 
 # Restrict access by IP address (adjust IP ranges accordingly)
 # If you want to restrict access by IP addresses only, you can use RequireAny instead of RequireAll
