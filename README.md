@@ -170,6 +170,7 @@ It provides optional tools to:
 /
 ├── Shellscripts/          # Bash scripts used inside/outside Docker
 ├── Fail2Ban-Report/       # Web frontend + PHP + assets + archive (copied into container)
+├── Helper-Script.sh       # Enables you to make changes in the running Container
 ├── installer.sh           # Automatic installation script for Docker
 ├── docker-compose.yml     # Docker Compose configuration
 └── Dockerfile             # Dockerfile for the web frontend
@@ -218,6 +219,9 @@ chmod +x installer.sh
 ./Helper-Script
 ```
 this will take you to /var/www/html of the Container, so you can:
+```
+cd Fail2Ban-Report && nano .htaccess
+```
 - edit .htaccess for more security
 - create a .htpasswd (best place would be in /var/www/ - so outside of the webroot)
 - you can also create a html file in www with a redirect to Fail2Ban-Report/ or whatever you like
@@ -230,11 +234,18 @@ https://<your-server-ip>/Fail2Ban-Report
 ```
 > (Default port is defined in docker-compose.yml.)
 
+## Set up cronjobs for Shellscripts
+
+```
+crontab -e
+```
+
 ## First Login & Security
 
-
-First Login ... 
-
+First Login - Check
+- login security works (htaccess file)
+- https is setup correctly
+ 
 
 ## Maintenance
 
