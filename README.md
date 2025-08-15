@@ -190,7 +190,7 @@ ether per .zip File or
 
 ```
 git clone https://github.com/SubleXBle/Fail2Ban-Report-Docker
-cd Fail2Ban-Report
+cd Fail2Ban-Report-Docker
 ```
 
 > You can moove the folder to wherever you want to keep your images on your Host
